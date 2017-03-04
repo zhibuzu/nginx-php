@@ -14,3 +14,6 @@ fpm:
     # be the same as nginx.root
     volumes:
         - ~/nginx/code/:/var/share/nginx/html/
+        - ~/开发/:/var/www/
+        - ~/nginx/config/:/etc/nginx/conf.d/
+        - ~/nginx/log/:/var/log/nginx/

@@ -2,5 +2,5 @@ FROM nginx:latest
 
 MAINTAINER Jesse Hu
 
-ADD ./default.conf /etc/nginx/conf.d/
+ADD ./nginx.conf /etc/nginx/nginx.conf
 	
