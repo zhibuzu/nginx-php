@@ -1,23 +1,22 @@
 nginx:
-    build: .
+    build: ./nginx/
+    expose:
+        - 80
     ports:
         - "80:80"
     links:
         - fpm
     volumes:
-        - ~/nginx/code/:/var/share/nginx/html/
-        - ~/开发/:/var/www/
-        - ~/nginx/config/:/etc/nginx/conf.d/
-        - ~/nginx/log/:/var/log/nginx/
+        - ./nginx/conf/:/etc/nginx/conf.d/
+        - ./nginx/logs/:/home/logs
+        - ./nginx/error:/home/error
+        - ~/dev/:/home/www
 fpm:
-    build: ../fpm/
-    ports:
-        - "9000:9000"
-
+    build: ./fpm/
+    expose: 
+        - 9000
     # seems like fpm receives the full path from nginx
     # and tries to find the files in this dock, so it must
     # be the same as nginx.root
     volumes:
-        - ~/nginx/code/:/var/share/nginx/html/
-        - ~/开发/:/var/www
-        
+        - ~/dev:/home/www
