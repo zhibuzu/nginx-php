@@ -39,3 +39,4 @@
 2017/05/01 01:49:46 [info] 7#0: *7 client 172.17.0.1 closed keepalive connection
 2017/05/01 02:49:53 [info] 7#0: *2 client 172.17.0.1 closed keepalive connection
 2017/05/01 09:36:34 [info] 6#0: *1 client 172.17.0.1 closed keepalive connection
+2017/05/01 09:40:03 [info] 7#0: *1 client 172.17.0.1 closed keepalive connection
