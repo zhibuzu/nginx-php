@@ -32,3 +32,10 @@
 2017/04/29 13:05:42 [error] 7#0: *29 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.17.0.1, server: www.validator.dev.com, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.17.0.2:9000", host: "www.validator.dev.com"
 2017/04/29 13:05:42 [error] 7#0: *29 rewrite or internal redirection cycle while internally redirecting to "/index.php/", client: 172.17.0.1, server: www.validator.dev.com, request: "GET /favicon.ico HTTP/1.1", host: "www.validator.dev.com", referrer: "http://www.validator.dev.com/index.php"
 2017/04/29 13:06:33 [error] 7#0: *1 rewrite or internal redirection cycle while internally redirecting to "/index.php/", client: 172.17.0.1, server: www.validator.dev.com, request: "GET /favicon.ico HTTP/1.1", host: "www.validator.dev.com", referrer: "http://www.validator.dev.com/index.php"
+2017/04/29 14:35:46 [error] 7#0: *1 rewrite or internal redirection cycle while internally redirecting to "/index.php/", client: 172.17.0.1, server: www.validator.dev.com, request: "GET /favicon.ico HTTP/1.1", host: "www.validator.dev.com", referrer: "http://www.validator.dev.com/index.php"
+2017/05/01 01:48:34 [error] 7#0: *4 rewrite or internal redirection cycle while internally redirecting to "/index.php/", client: 172.17.0.1, server: www.validator.dev.com, request: "GET / HTTP/1.1", host: "www.validator.dev.com"
+2017/05/01 01:48:34 [error] 7#0: *5 rewrite or internal redirection cycle while internally redirecting to "/index.php/", client: 172.17.0.1, server: www.validator.dev.com, request: "GET /favicon.ico HTTP/1.1", host: "www.validator.dev.com", referrer: "http://www.validator.dev.com/"
+2017/05/01 01:48:40 [error] 7#0: *6 rewrite or internal redirection cycle while internally redirecting to "/index.php/", client: 172.17.0.1, server: www.validator.dev.com, request: "GET / HTTP/1.1", host: "www.validator.dev.com"
+2017/05/01 01:49:46 [info] 7#0: *7 client 172.17.0.1 closed keepalive connection
+2017/05/01 02:49:53 [info] 7#0: *2 client 172.17.0.1 closed keepalive connection
+2017/05/01 09:36:34 [info] 6#0: *1 client 172.17.0.1 closed keepalive connection
