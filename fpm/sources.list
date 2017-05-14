@@ -1,8 +1,0 @@
-deb http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
-deb http://deb.debian.org/debian jessie main
-deb http://deb.debian.org/debian jessie-updates main
-deb http://security.debian.org jessie/updates main
