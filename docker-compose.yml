@@ -21,6 +21,7 @@ services:
             args:
                 - INSTALL_MEMCACHED=true
                 - INSTALL_XDEBUG=true
+                - INSTALL_MYSQLI=true
         expose: 
             - 9000
         # seems like fpm receives the full path from nginx

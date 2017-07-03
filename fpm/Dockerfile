@@ -21,6 +21,7 @@ RUN	apt-get update && \
 		apt-transport-https \
 		ca-certificates \
 		locales \
+		curl \
 		wget \
 		zlib1g-dev \
 		libmemcached-dev \
@@ -32,6 +33,37 @@ RUN	apt-get update && \
 		libssl-dev \
 		libmcrypt-dev \
 	&& rm -rf /tmp/* && rm -rf /var/fmp/* && rm -rf /var/lib/apt/lists/*
+
+# Install the PHP mcrypt extention
+RUN docker-php-ext-install mcrypt
+
+# Install the PHP pdo_mysql extention
+RUN docker-php-ext-install pdo_mysql
+
+# Install the PHP pdo_pgsql extention
+RUN docker-php-ext-install pdo_pgsql
+
+#####################################
+# gd:
+#####################################
+
+# Install the PHP gd library
+RUN docker-php-ext-configure gd \
+        --enable-gd-native-ttf \
+        --with-jpeg-dir=/usr/lib \
+        --with-freetype-dir=/usr/include/freetype2 && \
+    docker-php-ext-install gd
+
+
+#####################################
+# Mysqli Modifications:
+#####################################
+
+ARG INSTALL_MYSQLI=false
+RUN if [ ${INSTALL_MYSQLI} = true ]; then \
+    docker-php-ext-install mysqli \
+;fi
+
 
 ##############################
 # PHP memcached
