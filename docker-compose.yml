@@ -37,3 +37,9 @@ services:
             - "11211:11211"
           mem_limit: 1g
           command: memcached -m 1024m
+    redis: 
+        build: ./redis
+        expose:
+            - 6379
+        ports:
+            - "6379:6379"
