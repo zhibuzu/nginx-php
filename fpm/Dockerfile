@@ -97,6 +97,28 @@ RUN if [ ${INSTALL_XDEBUG} = true ]; then \
 # Copy xdebug configration for remote debugging
 COPY ./ext/xDebug/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 	
+#####################################
+# Human Language and Character Encoding Support:
+#####################################
+
+ARG INSTALL_INTL=false
+RUN if [ ${INSTALL_INTL} = true ]; then \
+    # Install intl and requirements
+    apt-get update -yqq && \
+    apt-get install -y zlib1g-dev libicu-dev g++ && \
+    docker-php-ext-configure intl && \
+    docker-php-ext-install intl \
+;fi
+
+#####################################
+# ZipArchive:
+#####################################
+
+ARG INSTALL_ZIP_ARCHIVE=false
+RUN if [ ${INSTALL_ZIP_ARCHIVE} = true ]; then \
+    # Install the zip extension
+    docker-php-ext-install zip \
+;fi
 	
 
 #声明暴露9000端口
