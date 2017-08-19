@@ -6,14 +6,29 @@ MAINTAINER Jesse Hu <hu2014jesse@gmail.com>
 RUN mkdir /home/www
 
 # 添加apt的网易源
-RUN touch /etc/apt/sources.list.d/163.sources.list && \
-	echo "deb http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse" | tee /etc/apt/sources.list.d/163.sources.list && \
-	echo "deb http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse" | tee -a /etc/apt/sources.list.d/163.sources.list && \
-	echo "deb http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse" | tee -a /etc/apt/sources.list.d/163.sources.list && \
-	echo "deb http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse" | tee -a /etc/apt/sources.list.d/163.sources.list && \
-	echo "deb http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse" | tee -a /etc/apt/sources.list.d/163.sources.list && \
-	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
-	
+# RUN touch /etc/apt/sources.list.d/163.sources.list && \
+#	echo "deb http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse" | tee /etc/apt/sources.list.d/163.sources.list && \
+#	echo "deb http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse" | tee -a /etc/apt/sources.list.d/163.sources.list && \
+#	echo "deb http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse" | tee -a /etc/apt/sources.list.d/163.sources.list && \
+#	echo "deb http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse" | tee -a /etc/apt/sources.list.d/163.sources.list && \
+#	echo "deb http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse" | tee -a /etc/apt/sources.list.d/163.sources.list && \
+#	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
+
+# add aliyun sources.list
+Run touch /etc/apt/sources.list.d/aliyun.sources.list && \
+echo "deb http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial main" && \
+echo "deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial main" && \
+echo "deb http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial-updates main" && \
+echo "deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial-updates main" && \
+echo "deb http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial universe" && \
+echo "deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial universe" && \
+echo "deb http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial-updates universe" && \
+echo "deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial-updates universe" && \
+echo "deb http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial-security main" && \
+echo "deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial-security main" && \
+echo "deb http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial-security universe" && \
+echo "deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial-security universe" && \
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
 
 # 安装基本模块
 RUN	apt-get update && \
