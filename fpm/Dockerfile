@@ -14,8 +14,11 @@ RUN mkdir /home/www
 #	echo "deb http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse" | tee -a /etc/apt/sources.list.d/163.sources.list && \
 #	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
 
+# clear apt sources.list
+RUN echo '' > /etc/apt/sources.list
+
 # add aliyun sources.list
-Run touch /etc/apt/sources.list.d/aliyun.sources.list && \
+RUN touch /etc/apt/sources.list.d/aliyun.sources.list && \
 echo "deb http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial main" && \
 echo "deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial main" && \
 echo "deb http://mirrors.cloud.aliyuncs.com/ubuntu/ xenial-updates main" && \
