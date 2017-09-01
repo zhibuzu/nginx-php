@@ -24,6 +24,8 @@ services:
                 - INSTALL_MYSQLI=true
                 - INSTALL_INTL=true
                 - INSTALL_ZIP_ARCHIVE=true
+                - CLEAR_ORIGIN_APT_SOURCES=false
+                - APT_SOURCES=aliyun_sources.list
         expose: 
             - 9000
         # seems like fpm receives the full path from nginx
